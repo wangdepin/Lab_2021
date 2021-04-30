@@ -1,7 +1,7 @@
 ---
 title: "Lab12_sample_code"
-author: "Qian Xiao"
-date: '2020-04-15'
+author: "Wang Depin"
+date: '2020-04-30'
 output: html_document
 ---
 
@@ -9,9 +9,10 @@ output: html_document
 
 ```{r}
 library(survival)
+library(dplyr)
 data(lung)
 #Count the occurrence of values in column "ph.karno" and sort by frequency of occurrence
-lung %>% group_by(ph.karno) %>% summarise(Count=n()) %>% arrange(desc(Count))
+mydata <- lung %>% group_by(ph.karno) %>% summarise(Count=n()) %>% arrange(desc(Count))
 ```
 
 
